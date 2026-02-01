@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Krittika 💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+      font-family: "Comic Sans MS", "Arial", sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 45px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      max-width: 420px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 140px;
+    }
+
+    #yes {
+      font-size: 24px;
+      padding: 22px 60px;
+      border-radius: 50px;
+      border: none;
+      background: #ff4d88;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(255,77,136,0.5);
+    }
+
+    #no {
+      position: absolute;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+      left: 240px;
+      top: 40px;
+    }
+
+    #hint {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>💘 Krittika (Gugudi) 💘</h1>
+    <p class="sub">Will you be my Valentine?</p>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">YES 💖</button>
+      <button id="no">No</button>
+    </div>
+
+    <p id="hint">No seems a little shy 👀</p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const hint = document.getElementById("hint");
+
+    const messages = [
+      "Nice try 😏",
+      "Oops, missed me!",
+      "Haha not today 😂",
+      "You KNOW the answer 💕",
+      "Stop resisting 😌"
+    ];
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 260;
+      const y = Math.random() * 90;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+
+      hint.textContent = messages[Math.floor(Math.random() * messages.length)];
+    });
+
+    function yesClicked() {
+      document.querySelector(".card").innerHTML = `
+        <h1>🥰 YAYYYYY 🥰</h1>
+        <p>I knew it 💖</p>
+        <p>Can’t wait to spend Valentine’s with you ✨</p>
+        <p>💐🍫🎬</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
